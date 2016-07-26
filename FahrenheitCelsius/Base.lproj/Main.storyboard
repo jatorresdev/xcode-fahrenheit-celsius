@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FahrenheitCelsius" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingrese la tempratura Fahrenheit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yAq-6D-bVj">
+                                <rect key="frame" x="121" y="41" width="358" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="UGj-Nn-neY"/>
+                                    <constraint firstAttribute="height" constant="30" id="cey-UJ-8Qz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMI-QA-ryT">
+                                <rect key="frame" x="228" y="87" width="145" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="eXr-7T-hgM"/>
+                                    <constraint firstAttribute="width" constant="145" id="vi1-g0-cNt"/>
+                                </constraints>
+                                <state key="normal" title="Convertir a celsius"/>
+                                <connections>
+                                    <action selector="convertirCelsius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="see-tO-l9R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0K-HM-lMd">
+                                <rect key="frame" x="169" y="145" width="262" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="LVo-Vy-hBm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yAq-6D-bVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="7A2-fU-t0a"/>
+                            <constraint firstItem="yAq-6D-bVj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EUh-4z-88s"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v0K-HM-lMd" secondAttribute="bottom" constant="410" id="MzB-pe-vUF"/>
+                            <constraint firstItem="v0K-HM-lMd" firstAttribute="top" secondItem="IMI-QA-ryT" secondAttribute="bottom" constant="26" id="Z1l-AP-3Ma"/>
+                            <constraint firstItem="IMI-QA-ryT" firstAttribute="top" secondItem="yAq-6D-bVj" secondAttribute="bottom" constant="16" id="ed6-ER-JAD"/>
+                            <constraint firstItem="yAq-6D-bVj" firstAttribute="centerX" secondItem="IMI-QA-ryT" secondAttribute="centerX" id="kmI-YE-7iW"/>
+                            <constraint firstItem="IMI-QA-ryT" firstAttribute="centerX" secondItem="v0K-HM-lMd" secondAttribute="centerX" id="kmt-zP-cdh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="v0K-HM-lMd" id="Aew-Zu-xbz"/>
+                        <outlet property="textField" destination="yAq-6D-bVj" id="XrN-av-f7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="298" y="411"/>
         </scene>
     </scenes>
 </document>

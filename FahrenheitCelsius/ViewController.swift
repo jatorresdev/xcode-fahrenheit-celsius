@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    @IBAction func convertirCelsius(sender: AnyObject) {
+        //let fahrenheitText = textField.text
+        //let fahrenheitValue = (fahrenheitText! as NSString).doubleValue
+        
+        //let result = (fahrenheitValue - 32.00) / 1.800
+        let result = convertFahrenheitCelsius(textField.text!)
+        
+        label.text = "Celsius: \(result)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +30,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func convertFahrenheitCelsius(fahrenheit: NSString) -> Double {
+        let fahrenheitValue = (fahrenheit).doubleValue
+        
+        return (fahrenheitValue - 32.00) / 1.800
+        
     }
 
 
