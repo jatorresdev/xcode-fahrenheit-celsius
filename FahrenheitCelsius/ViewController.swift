@@ -13,10 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBAction func convertirCelsius(sender: AnyObject) {
-        //let fahrenheitText = textField.text
-        //let fahrenheitValue = (fahrenheitText! as NSString).doubleValue
-        
-        //let result = (fahrenheitValue - 32.00) / 1.800
         let result = convertFahrenheitCelsius(textField.text!)
         
         label.text = "Celsius: \(result)"
